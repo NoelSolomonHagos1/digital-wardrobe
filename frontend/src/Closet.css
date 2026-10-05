@@ -1,0 +1,62 @@
+.closet {
+  --bg: #faf8f4; --ink: #111; --muted: #8a8780; --blue: #2f5bff; --line: #ece9e2;
+  max-width: 430px; min-height: 100vh; margin: 0 auto; background: var(--bg); color: var(--ink);
+  display: flex; flex-direction: column; box-sizing: border-box;
+  font-family: "Inter", system-ui, -apple-system, sans-serif;
+}
+.closet * { box-sizing: border-box; }
+.closet-content { padding: 72px 20px 24px; }
+
+.closet-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px; }
+.closet-head h1 { margin: 0; font-size: 28px; font-weight: 700; letter-spacing: -0.015em; }
+.head-actions { display: flex; gap: 6px; }
+.icon-btn { width: 40px; height: 40px; border: 0; background: none; color: var(--ink); border-radius: 12px; cursor: pointer; display: grid; place-items: center; }
+.icon-btn[aria-pressed="true"] { color: var(--blue); }
+.icon-btn:focus-visible, .chip-btn:focus-visible, .item:focus-visible, .search input:focus-visible { outline: 2px solid var(--blue); outline-offset: 2px; }
+
+.search { margin-bottom: 12px; }
+.search input {
+  width: 100%; height: 44px; border-radius: 14px; border: 1px solid var(--line); background: #fff;
+  padding: 0 14px; font: inherit; font-size: 15px; color: var(--ink);
+}
+
+/* Vaakasuunnassa vieritettävät kategoriat */
+.filters { display: flex; gap: 10px; overflow-x: auto; margin: 0 -20px 22px; padding: 4px 20px; scrollbar-width: none; }
+.filters::-webkit-scrollbar { display: none; }
+.chip-btn {
+  flex: none; height: 38px; padding: 0 18px; border-radius: 19px; border: 1px solid var(--line);
+  background: #fff; color: var(--ink); font: inherit; font-size: 14px; font-weight: 600; cursor: pointer;
+  display: inline-flex; align-items: center; gap: 8px;
+}
+.chip-btn.active { background: var(--blue); border-color: var(--blue); color: #fff; }
+
+.grid-items { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.item {
+  background: #fff; border: 0; border-radius: 20px; padding: 0; overflow: hidden; text-align: left;
+  font: inherit; color: inherit; cursor: pointer; box-shadow: 0 6px 18px rgba(30, 30, 20, .06);
+}
+.item .photo { aspect-ratio: 1 / 0.92; background: #eceae4; display: grid; place-items: center; color: #b3b0a8; }
+.item .photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.item .info { padding: 12px 12px 14px; }
+.item h2 { margin: 0; font-size: 15px; font-weight: 700; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.item p { margin: 3px 0 0; font-size: 13px; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+.empty { text-align: center; color: var(--muted); font-size: 14px; padding: 48px 0; }
+
+/* Alapalkki */
+.closet-tabbar {
+  position: sticky; bottom: 0; margin-top: auto; background: #fff; border-top: 1px solid var(--line);
+  display: grid; grid-template-columns: repeat(5, 1fr); align-items: end;
+  padding: 10px 8px calc(14px + env(safe-area-inset-bottom, 0px));
+}
+.closet-tab {
+  background: none; border: 0; font: inherit; font-size: 11px; font-weight: 600; color: var(--muted);
+  display: flex; flex-direction: column; align-items: center; gap: 4px; cursor: pointer; padding: 4px 0;
+}
+.closet-tab.active { color: var(--blue); }
+.closet-tab:focus-visible, .closet-fab:focus-visible { outline: 2px solid var(--blue); outline-offset: 2px; border-radius: 12px; }
+.closet-fab {
+  justify-self: center; width: 56px; height: 56px; margin-top: -28px; border-radius: 50%; border: 0;
+  background: var(--blue); color: #fff; cursor: pointer; display: grid; place-items: center;
+  box-shadow: 0 8px 22px rgba(47, 91, 255, .45);
+}

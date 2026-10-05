@@ -1,0 +1,45 @@
+.detail {
+  --bg: #faf8f4; --ink: #111; --muted: #8a8780; --blue: #2f5bff; --tint: #e9ecfa; --line: #ece9e2; --red: #f23b3b;
+  max-width: 430px; min-height: 100vh; margin: 0 auto; background: var(--bg); color: var(--ink);
+  padding: 56px 20px 28px; box-sizing: border-box; display: flex; flex-direction: column;
+  font-family: "Inter", system-ui, -apple-system, sans-serif;
+}
+.detail * { box-sizing: border-box; }
+
+.detail-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 14px; }
+.detail-top .right { display: flex; gap: 4px; }
+.d-icon { width: 40px; height: 40px; border: 0; background: none; color: var(--ink); border-radius: 12px; cursor: pointer; display: grid; place-items: center; }
+.d-icon.on { color: var(--red); }
+.detail button:focus-visible { outline: 2px solid var(--blue); outline-offset: 2px; }
+
+.d-photo { width: 100%; aspect-ratio: 1 / 0.8; border-radius: 28px; overflow: hidden; background: #eceae4; display: grid; place-items: center; color: #b3b0a8; }
+.d-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+.d-meta { display: flex; align-items: center; justify-content: space-between; margin-top: 18px; }
+.d-brand { font-size: 13px; letter-spacing: .04em; text-transform: uppercase; color: var(--muted); }
+.d-price { background: var(--tint); color: var(--blue); font-size: 13px; font-weight: 700; padding: 5px 12px; border-radius: 14px; }
+.detail h1 { margin: 8px 0 12px; font-size: 26px; font-weight: 700; letter-spacing: -0.015em; }
+
+.d-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 18px; }
+.d-tag { height: 30px; padding: 0 14px; border-radius: 15px; border: 1px solid var(--line); background: #fff; font-size: 13px; display: inline-flex; align-items: center; }
+.d-tag:first-child { background: var(--blue); border-color: var(--blue); color: #fff; font-weight: 600; }
+
+.d-weather { display: flex; align-items: center; gap: 14px; background: #fff; border: 1px solid var(--line); border-radius: 18px; padding: 14px 16px; margin-bottom: 14px; }
+.d-weather .ico { width: 44px; height: 44px; border-radius: 50%; background: var(--tint); color: var(--blue); display: grid; place-items: center; flex: none; }
+.d-weather strong { display: block; font-size: 15px; }
+.d-weather span { display: block; margin-top: 2px; font-size: 13px; color: var(--muted); }
+
+.d-specs { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 28px; }
+.d-spec { background: #fff; border-radius: 18px; padding: 14px 16px; border: 1px solid var(--line); }
+.d-spec small { display: block; font-size: 11px; letter-spacing: .05em; text-transform: uppercase; color: var(--muted); margin-bottom: 4px; }
+.d-spec b { font-size: 16px; font-weight: 700; display: flex; align-items: center; gap: 8px; }
+.swatch { width: 16px; height: 16px; border-radius: 50%; flex: none; }
+
+.d-actions { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.d-btn { height: 52px; border-radius: 26px; font: inherit; font-size: 15px; font-weight: 600; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px; }
+.d-btn.primary { background: var(--blue); border: 2px solid var(--blue); color: #fff; }
+.d-btn.outline { background: transparent; border: 2px solid var(--blue); color: var(--blue); }
+
+.d-footer { display: flex; justify-content: space-between; margin-top: 22px; }
+.d-link { background: none; border: 0; padding: 4px 0; font: inherit; font-size: 14px; font-weight: 600; color: var(--muted); cursor: pointer; }
+.d-link.danger { color: var(--red); }
