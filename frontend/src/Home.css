@@ -30,7 +30,27 @@ button.card:focus-visible { outline: 2px solid var(--blue); outline-offset: 2px;
 .weather { padding: 24px; }
 .weather .temp { font-size: 36px; font-weight: 700; color: var(--blue); letter-spacing: -0.02em; line-height: 1.1; }
 .weather h2 { margin-top: 10px; }
+.weather-location { margin-bottom: 10px; color: var(--muted); font-size: 10px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
+.weather-location span { padding: 0 4px; color: var(--blue); }
+.weather-updated { display: block; margin-top: 9px; color: #99968e; font-size: 10px; }
+.weather-source { display: inline-block; margin-top: 7px; color: #77746e; font-size: 10px; text-decoration: underline; text-underline-offset: 2px; }
 .weather-icon { width: 64px; height: 64px; border-radius: 50%; background: var(--tint); color: var(--blue); display: grid; place-items: center; flex: none; }
+.today-recommendation { display: block; grid-column: 1 / -1; border: 1px solid #e7e9f5; background: linear-gradient(130deg, #fff, #f7f8ff); }
+.recommendation-heading { display: flex; align-items: flex-start; justify-content: space-between; gap: 20px; }
+.recommendation-kicker { display: flex; align-items: center; gap: 7px; color: var(--blue); font-size: 10px; font-weight: 800; letter-spacing: .08em; }
+.recommendation-heading h2 { margin: 11px 0 5px; font: 800 23px 'Manrope', sans-serif; letter-spacing: -.5px; }
+.recommendation-heading p { max-width: 700px; color: var(--muted); font-size: 13px; line-height: 1.5; }
+.ai-badge { flex: none; padding: 7px 10px; border-radius: 99px; background: #eff2ff; color: #5269c5; font-size: 9px; font-weight: 800; letter-spacing: .04em; }
+.recommendation-items { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 11px; margin-top: 21px; }
+.recommendation-item { display: flex; align-items: center; gap: 11px; min-width: 0; padding: 10px; border: 1px solid #eeece7; border-radius: 14px; background: #fff; }
+.recommendation-thumb { display: grid; width: 49px; height: 49px; flex: none; place-items: center; overflow: hidden; border-radius: 10px; background: #f0eee8; color: var(--blue); }
+.recommendation-thumb img { width: 100%; height: 100%; object-fit: cover; }
+.recommendation-item > div:last-child { display: grid; min-width: 0; gap: 4px; }
+.recommendation-item strong { overflow: hidden; font-size: 12px; text-overflow: ellipsis; white-space: nowrap; }
+.recommendation-item span { color: var(--muted); font-size: 10px; text-transform: capitalize; }
+.recommendation-empty { margin-top: 15px; color: var(--muted); font-size: 13px; }
+.recommendation-actions { display: flex; gap: 10px; margin-top: 18px; }
+.recommendation-actions .button-primary, .recommendation-actions .button-secondary { min-height: 40px; padding-inline: 16px; font-size: 12px; }
 
 .chip { width: 44px; height: 44px; border-radius: 50%; background: #f4f2ec; color: var(--ink); display: grid; place-items: center; flex: none; }
 .chip.blue { background: var(--tint); color: var(--blue); }
@@ -50,4 +70,10 @@ button.card:focus-visible { outline: 2px solid var(--blue); outline-offset: 2px;
   justify-self: center; width: 56px; height: 56px; margin-top: -28px; border-radius: 50%; border: 0;
   background: var(--blue); color: #fff; cursor: pointer; display: grid; place-items: center;
   box-shadow: 0 8px 22px rgba(47, 91, 255, .45);
+}
+@media (max-width: 620px) {
+  .recommendation-items { grid-template-columns: 1fr; }
+  .recommendation-heading { flex-direction: column; }
+  .ai-badge { order: -1; }
+  .recommendation-actions { flex-wrap: wrap; }
 }

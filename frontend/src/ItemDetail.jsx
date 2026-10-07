@@ -40,7 +40,8 @@ export default function ItemDetail({
   }
 
   const categoryLabels = {
-    tops: "Top",
+    tops: "Shirt",
+    shirts: "Shirt",
     pants: "Pants",
     jackets: "Jacket",
     shoes: "Shoes",

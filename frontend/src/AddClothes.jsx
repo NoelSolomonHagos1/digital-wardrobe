@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import "./AddClothes.css";
 
 const CATEGORIES = [
-  { id: "tops", label: "Add Tops" },
+  { id: "shirts", label: "Add Shirts" },
   { id: "pants", label: "Add Pants" },
   { id: "jackets", label: "Add Jackets" },
   { id: "shoes", label: "Add Shoes" },
@@ -84,7 +84,7 @@ const SparkleIcon = () => (
 );
 
 const categoryName = {
-  tops: "Top",
+  shirts: "Shirt",
   pants: "Pants",
   jackets: "Jacket",
   shoes: "Shoes",
@@ -146,7 +146,7 @@ function compressImage(file) {
 
 export default function AddClothes({ onAnalyze, onSkip }) {
   const [photos, setPhotos] = useState({
-    tops: [],
+    shirts: [],
     pants: [],
     jackets: [],
     shoes: [],
@@ -304,7 +304,7 @@ export default function AddClothes({ onAnalyze, onSkip }) {
                 )}
 
                 <span className="icon">
-                  {id === "tops" ? <CameraIcon /> : <PlusIcon />}
+                  {id === "shirts" ? <CameraIcon /> : <PlusIcon />}
                 </span>
 
                 <span className="label">

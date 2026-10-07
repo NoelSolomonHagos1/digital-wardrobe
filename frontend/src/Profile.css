@@ -1,0 +1,26 @@
+.profile-overview { display: flex; align-items: center; gap: 20px; padding: 28px; }
+.profile-avatar { display: grid; width: 76px; height: 76px; flex: none; place-items: center; border-radius: 50%; background: #e9edff; color: var(--blue); font: 800 24px 'Manrope', sans-serif; }
+.profile-person { flex: 1; }
+.profile-person h2 { margin: 0; font: 800 22px 'Manrope', sans-serif; }
+.profile-person p { margin: 5px 0 9px; color: var(--muted); font-size: 13px; }
+.member-tag { display: inline-flex; align-items: center; gap: 6px; padding: 5px 9px; border-radius: 99px; background: #f1f3ff; color: #4a63c8; font-size: 10px; font-weight: 700; }
+.member-tag span { width: 6px; height: 6px; border-radius: 50%; background: #44a783; }
+.profile-overview .button-secondary { min-height: 42px; font-size: 12px; }
+.profile-columns { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 24px; }
+.profile-card { padding: 25px; }
+.profile-card-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 23px; }
+.profile-card-head h2 { margin: 6px 0 0; font: 800 18px 'Manrope', sans-serif; }
+.profile-glyph { display: grid; width: 40px; height: 40px; place-items: center; border-radius: 13px; background: #eff2ff; color: var(--blue); font-size: 22px; }
+.profile-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 18px; }
+.profile-stats > div { display: grid; gap: 5px; padding: 18px; border-radius: 15px; background: #f8f7f3; }
+.profile-stats strong { color: var(--blue); font: 800 27px 'Manrope', sans-serif; }
+.profile-stats span { color: var(--muted); font-size: 11px; }
+.profile-row { display: flex; width: 100%; align-items: center; justify-content: space-between; padding: 15px 2px; border: 0; border-top: 1px solid #efede8; background: transparent; text-align: left; cursor: pointer; }
+.profile-row > span:first-child { display: grid; gap: 4px; }
+.profile-row b { font-size: 13px; }.profile-row small { color: var(--muted); font-size: 11px; }.profile-row > span:last-child { color: var(--blue); font-size: 20px; }
+.account-detail { display: grid; gap: 5px; padding: 14px 0; border-top: 1px solid #efede8; }
+.account-detail span { color: var(--muted); font-size: 11px; }.account-detail strong { font-size: 13px; }
+.profile-note { display: flex; gap: 10px; margin-top: 13px; padding: 13px; border-radius: 13px; background: #f3f5ff; color: #535c82; }
+.profile-note > span { color: var(--blue); }.profile-note p { margin: 0; font-size: 11px; line-height: 1.55; }
+.logout-button { display: flex; width: 100%; justify-content: space-between; margin-top: 18px; padding: 14px 0 0; border: 0; border-top: 1px solid #efede8; background: transparent; color: #a24747; font-size: 12px; font-weight: 700; cursor: pointer; }
+@media (max-width: 680px) { .profile-columns { grid-template-columns: 1fr; }.profile-overview { flex-wrap: wrap; padding: 20px; }.profile-overview .button-secondary { margin-left: 96px; }.profile-card { padding: 20px; } }

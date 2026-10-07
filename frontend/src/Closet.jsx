@@ -3,7 +3,7 @@ import "./Closet.css";
 
 const CATEGORIES = [
   { id: "all", label: "All" },
-  { id: "tops", label: "Tops", icon: true },
+  { id: "shirts", label: "Shirts", icon: true },
   { id: "pants", label: "Pants" },
   { id: "jackets", label: "Jackets" },
   { id: "shoes", label: "Shoes" },
@@ -19,7 +19,7 @@ const SlidersIcon = () => svg(<><path d="M5 4v16M12 4v16M19 4v16" /><path d="M3 
 const ShirtIcon = ({ size = 18 }) => svg(<path d="M9 4l-6 3 2 4 2-1v10h10V10l2 1 2-4-6-3a3 3 0 0 1-6 0z" />, size);
 
 const HomeIcon = () => svg(<><path d="M4 11l8-7 8 7" /><path d="M6 10v9h4v-5h4v5h4v-9" /></>);
-const CameraIcon = () => svg(<><path d="M4 8h3l1.5-2h7L17 8h3a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z" /><circle cx="12" cy="13" r="3.5" /></>);
+const OutfitIcon = () => svg(<><path d="m12 3 1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8L12 3z"/><path d="m19 15 .9 2.1L22 18l-2.1.9L19 21l-.9-2.1L16 18l2.1-.9L19 15z"/></>);
 const UserIcon = () => svg(<><circle cx="12" cy="8" r="4" /><path d="M4 20c1-4 4-6 8-6s7 2 8 6" /></>);
 const PlusIcon = () => svg(<path d="M12 5v14M5 12h14" />, 28);
 
@@ -27,7 +27,7 @@ const TABS = [
   { id: "home", label: "Home", Icon: HomeIcon },
   { id: "closet", label: "Closet", Icon: () => <ShirtIcon size={24} /> },
   { id: "fab" },
-  { id: "scan", label: "Scan", Icon: CameraIcon },
+  { id: "outfits", label: "Outfits", Icon: OutfitIcon },
   { id: "profile", label: "Profile", Icon: UserIcon },
 ];
 
@@ -43,7 +43,7 @@ export default function Closet({ items = [], onSelectItem, onFilter, onNavigate 
     const q = query.trim().toLowerCase();
     return items.filter(
       (it) =>
-        (category === "all" || it.category === category) &&
+        (category === "all" || (category === "shirts" && (it.category === "shirts" || it.category === "tops")) || it.category === category) &&
         (!q || it.name.toLowerCase().includes(q) || it.brand?.toLowerCase().includes(q))
     );
   }, [items, category, query]);
